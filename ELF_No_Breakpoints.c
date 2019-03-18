@@ -72,8 +72,8 @@ int main(int argc, char const *argv[]) {
 	printf("Checksum de la section .text : %x\n\n", checksum);  
  
 	for (i = 0 ; i < 25 ; i++) {
-		checksum = (checksum >> 1) | (checksum << (32 - 1)); Rotation par 1
-		pass = checksum ^ key_bytes[24 - i]; Xor avec la clé
+		checksum = (checksum >> 1) | (checksum << (32 - 1)); //Rotation par 1
+		pass = checksum ^ key_bytes[24 - i]; //Xor avec la clé
 		printf("%p xor %x = %c\n", checksum, key_bytes[24 - i], pass);
 		password[24 - i] = pass;
 	}
